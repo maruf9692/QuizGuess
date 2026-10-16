@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizGuess - Practice Quiz</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <h1>Quiz<span>Guess</span></h1>
+        <p>Upload. Practice. Improve.</p>
+    </header>
+
+    <main class="container">
+
+        <!-- Upload Section -->
+        <section class="upload-section">
+            <h2>Start Your Practice</h2>
+            <p>Upload your PDF containing questions and correct answers.</p>
+
+            <label for="pdfFile" class="upload-box">
+                <span class="upload-icon">📄</span>
+                <span>Choose your PDF file</span>
+                <small>PDF files only</small>
+            </label>
+
+            <input type="file" id="pdfFile" accept=".pdf,application/pdf">
+
+            <p id="fileName">No file selected</p>
+
+            <button id="startBtn" disabled>Start Quiz</button>
+            <p id="uploadMessage"></p>
+        </section>
+
+        <!-- Quiz Section -->
+        <section class="quiz-section" id="quizSection" hidden>
+            <div class="quiz-header">
+                <h2>Your Quiz</h2>
+                <p id="questionCounter">Question 1</p>
+            </div>
+
+            <h3 id="questionText">Question will appear here</h3>
+
+            <div id="optionsContainer"></div>
+
+            <button id="nextBtn" disabled>Next Question</button>
+        </section>
+
+        <!-- Result Section -->
+        <section class="result-section" id="resultSection" hidden>
+            <h2>Quiz Completed!</h2>
+
+            <p>Total Questions: <span id="totalQuestions">0</span></p>
+            <p>Correct Answers: <span id="correctAnswers">0</span></p>
+            <p>Wrong Answers: <span id="wrongAnswers">0</span></p>
+            <h3>Your Score: <span id="finalScore">0</span></h3>
+
+            <div id="answerReview"></div>
+
+            <button id="restartBtn">Try Again</button>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>QuizGuess &copy; 2026 | Practice makes progress.</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="script.js"></script>
+
+
+</body>
+</html>

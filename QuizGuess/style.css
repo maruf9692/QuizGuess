@@ -1,0 +1,272 @@
+
+/* 1. Global Settings */
+:root {
+    --bg-color: #080b09;
+    --card-color: #111713;
+    --green: #39ff88;
+    --green-dark: #16a34a;
+    --text-color: #f5f5f5;
+    --muted-color: #9ca89f;
+    --border-color: #26372c;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--bg-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 2. Navbar */
+.navbar {
+    padding: 25px 8%;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar h1 {
+    font-size: 28px;
+}
+
+.navbar h1 span {
+    color: var(--green);
+}
+
+.navbar p {
+    color: var(--muted-color);
+    font-size: 14px;
+}
+
+/* 3. Main Container */
+.container {
+    width: min(90%, 750px);
+    margin: 60px auto;
+    flex: 1;
+}
+
+/* 4. Common Cards */
+.upload-section,
+.quiz-section,
+.result-section {
+    background: var(--card-color);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 35px;
+    margin-bottom: 25px;
+}
+
+.upload-section {
+    text-align: center;
+}
+
+h2 {
+    font-size: 26px;
+    margin-bottom: 12px;
+}
+
+.upload-section > p {
+    color: var(--muted-color);
+    line-height: 1.6;
+}
+
+/* 5. PDF Upload Box */
+.upload-box {
+    margin-top: 28px;
+    border: 2px dashed #3d6349;
+    border-radius: 12px;
+    padding: 35px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.upload-box:hover {
+    border-color: var(--green);
+    background: #15241a;
+}
+
+.upload-icon {
+    font-size: 38px;
+}
+
+.upload-box small {
+    color: var(--muted-color);
+}
+
+/* Hide the default file input */
+#pdfFile {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+
+/* 6. File Name */
+#fileName {
+    margin: 15px 0;
+    color: var(--green);
+    overflow-wrap: anywhere;
+}
+
+/* 7. Buttons */
+button {
+    border: none;
+    border-radius: 8px;
+    background: var(--green);
+    color: #061009;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 13px 24px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover:not(:disabled) {
+    background: #76ffac;
+    transform: translateY(-1px);
+}
+
+button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+#uploadMessage {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+/* 8. Quiz Section */
+.quiz-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+#questionCounter {
+    color: var(--green);
+    font-size: 14px;
+}
+
+#questionText {
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.option {
+    display: block;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 12px;
+    background: #18221b;
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+}
+
+.option:hover:not(:disabled) {
+    border-color: var(--green);
+    background: #203527;
+}
+
+.option.selected {
+    border-color: var(--green);
+    background: #173b25;
+    color: var(--green);
+}
+
+#nextBtn {
+    margin-top: 15px;
+}
+
+/* 9. Result Section */
+.result-section {
+    text-align: center;
+}
+
+.result-section p {
+    margin: 18px 0;
+    color: var(--muted-color);
+}
+
+.result-section p span,
+#finalScore {
+    color: var(--green);
+    font-weight: bold;
+}
+
+#finalScore {
+    font-size: 30px;
+}
+
+#answerReview {
+    margin-top: 25px;
+    text-align: left;
+}
+
+.review-item {
+    padding: 15px;
+    margin-bottom: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    line-height: 1.7;
+}
+
+.correct {
+    color: var(--green);
+}
+
+.wrong {
+    color: #ff7373;
+}
+
+/* 10. Footer */
+footer {
+    padding: 22px;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+    color: var(--muted-color);
+    font-size: 13px;
+}
+
+/* 11. Mobile Responsive Design */
+@media (max-width: 600px) {
+    .navbar {
+        padding: 20px 5%;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .container {
+        margin: 30px auto;
+    }
+
+    .upload-section,
+    .quiz-section,
+    .result-section {
+        padding: 22px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    #questionText {
+        font-size: 18px;
+    }
+}
